@@ -27,16 +27,13 @@ export default function EmailForm({ onSubmit }: EmailFormProps) {
     setError('')
     setIsSubmitting(true)
     
-    // Email valide → appelle le parent (roue)
     onSubmit(trimmedEmail)
-    
     setIsSubmitting(false)
   }
 
   return (
     <div className="space-y-4">
       <div className="text-center">
-        {/* Icône style lanterne marocaine */}
         <div className="w-14 h-14 mx-auto bg-gradient-to-br from-[#C9A227]/20 to-[#D4AF37]/10 rounded-full flex items-center justify-center mb-3 border-2 border-[#C9A227]/30 relative">
           <div className="absolute inset-0 rounded-full animate-pulse bg-[#C9A227]/5" />
           <i className="ri-mail-fill text-2xl text-[#C9A227]" />
@@ -76,17 +73,17 @@ export default function EmailForm({ onSubmit }: EmailFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform shadow-lg text-xs whitespace-nowrap border border-[#C9A227]/20 relative overflow-hidden group"
+          className="w-full bg-gradient-to-r from-[#8B1538] to-[#A62639] hover:from-[#7A1230] hover:to-[#952235] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-102 shadow-lg text-xs whitespace-nowrap cursor-pointer border border-[#C9A227]/30 relative overflow-hidden group"
         >
           {isSubmitting ? (
             <>
-              <i className="ri-loader-4-line animate-spin" />
+              <i className="ri-loader-4-line animate-spin mr-2" />
               Enregistrement...
             </>
           ) : (
             <>
               Continuer
-              <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform" />
+              <i className="ri-arrow-right-line group-hover:translate-x-1 transition-transform ml-2" />
             </>
           )}
         </button>
